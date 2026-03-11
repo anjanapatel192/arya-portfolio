@@ -271,19 +271,19 @@ export default function Portfolio() {
 
       <Cursor />
 
-      {/* Ambient background blobs */}
+      
       <GlowBall style={{ width: 600, height: 600, background: ACCENT, top: -200, left: -200 }} />
       <GlowBall style={{ width: 500, height: 500, background: "#7c3aed", top: 300, right: -100 }} />
       <GlowBall style={{ width: 400, height: 400, background: AMBER, bottom: 200, left: "40%" }} />
 
-      {/* Grid overlay */}
+      
       <div style={{
         position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0,
         backgroundImage: `linear-gradient(${BORDER}44 1px, transparent 1px), linear-gradient(90deg, ${BORDER}44 1px, transparent 1px)`,
         backgroundSize: "60px 60px", opacity: 0.3,
       }} />
 
-      {/* NAV */}
+     
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
         backdropFilter: "blur(20px)", background: `${BG}cc`,
@@ -341,7 +341,7 @@ export default function Portfolio() {
         </div>
       )}
 
-      {/* HERO */}
+     
       <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "100px 5% 60px", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, width: "100%", margin: "0 auto", animation: "fadeUp 1s ease both" }}>
           <div style={{ fontFamily: "'DM Mono', monospace", color: ACCENT, fontSize: 13, letterSpacing: 3, marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
@@ -402,7 +402,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Floating tech badge */}
+       
         <div style={{
           position: "absolute", right: "5%", top: "50%", transform: "translateY(-50%)",
           animation: "float 5s ease-in-out infinite",
@@ -420,7 +420,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ABOUT */}
+    
       <section id="about" style={{ padding: "100px 5%", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SectionHeader number="01" title="About Me" />
@@ -470,7 +470,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
+      
       <section id="experience" style={{ padding: "100px 5%", position: "relative", zIndex: 1, background: `${CARD}44` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SectionHeader number="02" title="Experience" />
@@ -509,7 +509,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* PROJECTS */}
+   
       <section id="projects" style={{ padding: "100px 5%", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SectionHeader number="03" title="Projects" />
@@ -519,7 +519,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* SKILLS */}
       <section id="skills" style={{ padding: "100px 5%", position: "relative", zIndex: 1, background: `${CARD}44` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SectionHeader number="04" title="Skills" />
@@ -536,7 +535,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* CONTACT */}
+     
       <section id="contact" style={{ padding: "100px 5% 80px", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <SectionHeader number="05" title="Contact" center />
@@ -585,7 +584,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* FOOTER */}
+     
       <footer style={{ borderTop: `1px solid ${BORDER}`, padding: "24px 5%", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, position: "relative", zIndex: 1 }}>
         <div style={{ fontFamily: "'DM Mono', monospace", color: "#334155", fontSize: 12 }}>
           © 2025 Arya Patel · Built with React
