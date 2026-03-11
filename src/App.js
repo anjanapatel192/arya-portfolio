@@ -120,16 +120,30 @@ function Cursor() {
 
 function TypeWriter({ text, speed = 60 }) {
   const [displayed, setDisplayed] = useState("");
+
   useEffect(() => {
     let i = 0;
+
     const t = setInterval(() => {
-      setDisplayed(text.slice(0, ++i));
-      if (i >= text.length) clearInterval(t);
+      i++;
+      setDisplayed(text.slice(0, i));
+
+      if (i >= text.length) {
+        clearInterval(t);
+      }
     }, speed);
+
     return () => clearInterval(t);
-  }, [text]);
-  return <span>{displayed}<span style={{ animation: "blink 1s infinite", color: ACCENT }}>▌</span></span>;
+  }, [text, speed]); // ✅ FIXED
+
+  return (
+    <span>
+      {displayed}
+      <span style={{ animation: "blink 1s infinite", color: ACCENT }}>▌</span>
+    </span>
+  );
 }
+
 
 function GlowBall({ style }) {
   return <div style={{
@@ -225,7 +239,9 @@ function ProjectCard({ project, i }) {
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(false);  const sections = ["home", "about", "experience", "projects", "skills", "contact"];
+  const [menuOpen, setMenuOpen] = useState(false);  
+  const sections = ["home", "about", "experience", "projects", "skills", "contact"];
+
 
   const downloadResume = () => {
     const a = document.createElement("a");
@@ -238,14 +254,25 @@ export default function Portfolio() {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => e.isIntersecting && setActiveSection(e.target.id)),
-      { threshold: 0.4 }
-    );
-    sections.forEach(s => { const el = document.getElementById(s); if (el) obs.observe(el); });
-    return () => obs.disconnect();
-  }, []);
+useEffect(() => {
+  const obs = new IntersectionObserver(
+    entries =>
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setActiveSection(e.target.id);
+        }
+      }),
+    { threshold: 0.4 }
+  );
+
+  sections.forEach(s => {
+    const el = document.getElementById(s);
+    if (el) obs.observe(el);
+  });
+
+  return () => obs.disconnect();
+}, [sections]); // ✅ FIXED
+
 
   return (
     <div style={{ background: BG, minHeight: "100vh", color: "#e2e8f0", fontFamily: "'Inter', sans-serif", position: "relative", overflowX: "hidden" }}>
