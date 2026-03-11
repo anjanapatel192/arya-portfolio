@@ -482,14 +482,6 @@ export default function Portfolio() {
             </button>
           </div>
 
-          <div style={{ display: "flex", gap: 40, marginTop: 64, flexWrap: "wrap" }}>
-            {[["4+", "Years Experience"], ["5+", "Projects Shipped"], ["3", "Industries"], ["10+", "Technologies"]].map(([n, l]) => (
-              <div key={l}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 40, color: ACCENT, fontWeight: 900 }}>{n}</div>
-                <div style={{ color: "#475569", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", fontFamily: "'DM Mono', monospace" }}>{l}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div
